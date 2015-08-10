@@ -3,7 +3,10 @@ console.log("sanity check!");
 // Step 1: Ask (prompt) the user for the total number of students learning JavaScript
 	var begin = prompt("How many students are learning JavaScript?");
 	var beginNum = parseInt(begin);
+	var mentors = prompt("How many mentors will be helping the students?");
+	var mentorsNum = parseInt(mentors);
 	var studentArray = [];
+	var mentorArray = [];
 
 function studentInfo() {
 	var studentName = prompt("What is the students name?");
@@ -22,15 +25,30 @@ function moreStudents() {
 
 function addStudent() {
 	var next = prompt("Would you like to add another student?");
-		if (prompt === "yes") {
-			studentInfo();
+		if (next === "yes") {
+			studentInfo();	
 		}
 }
+function addMentors() {
+	var mentorName = prompt("What is the mentors name?");
+	var mentorPhone = prompt("What is the mentors phone number?");
+	var mentorCity = prompt("where does the mentor live?");
+	mentorArray.push({"name": mentorName, "Phone Number": mentorPhone, "City": mentorCity});
+	console.log(mentorArray);
+}
+function moreMentors() {
+	for (var i = 0; i < mentors; i++) {
+		addMentors();
+		}
+}
+
 
 
 studentInfo();
 moreStudents();
 addStudent();
+addMentors();
+moreMentors();
 // var numStudents = prompt("How many students will be learning JavaScript?");
 // Step 2: For each student, ask the user for their name, phone number, and city. Create an object for each person. Add each object to an array. BONUS: add validation.
 // var totalStudents = [];
