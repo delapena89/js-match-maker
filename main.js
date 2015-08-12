@@ -65,12 +65,10 @@ function addMentor() {
 
 function iterate(array){
 	for(var key in array){
-		console.log(array[key]);
-  alert('Name : ' + (studentArray[key].name) + '\nPhone Number : ' + (studentArray[key].phoneNumber) + "\nCity : " + (studentArray[key].city));
-  alert('Name : ' + (mentorArray[key].name) + '\nPhone Number : ' + (mentorArray[key].phoneNumber) + "\nCity : " + (mentorArray[key].city));
-  // alert(array[0]);	
-	}
-  }
+		console.log(array[key]);	 
+	 alert('Name : ' + (array[key].name) + '\nPhone Number : ' + (array[key].phoneNumber) + "\nCity : " + (array[key].city));
+ 	}
+}
 
 
 
@@ -82,6 +80,7 @@ moreMentors();
 addMentor();
 iterate(studentArray);
 iterate(mentorArray);
+
 
 
 
