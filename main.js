@@ -1,20 +1,29 @@
 console.log("sanity check!");
 
-// Step 1: Ask (prompt) the user for the total number of students learning JavaScript
+	// Step 1: Ask (prompt) the user for the total number of students learning JavaScript
 	var begin = prompt("How many students are learning JavaScript?");
+	// takes var = begin and turns it into a number
 	var beginNum = parseInt(begin);
+	// prompts user to tell how many students will be learing, stores answer in variable
 	var mentors = prompt("How many mentors will be helping the students?");
+	// takes var mentors and turns it into a number
 	var mentorsNum = parseInt(mentors);
+	// declares an empty array called studentArray, this will be populated later by a function
 	var studentArray = [];
+	// declares an empty array called mentorArray, this will be populated later by a function
 	var mentorArray = [];
 
+// this function will give me all the info i need from the students 
 function studentInfo() {
+	// prompts user to give student name, answer is stored in var studentName
 	var studentName = prompt("What is the students name?");
+	// 	// prompts user to give student name, answer is stored in var studentPhone
 	var studentPhone = prompt("What is the students phone number?");
+	// prompts user to give student name, answer is stored in var studentCity
 	var studentCity = prompt("Where is the student from?");
-	console.log(studentInfo);
-	studentArray.push({"name": studentName, "Phone Number": studentPhone, "City": studentCity});
-	console.log(studentArray);
+	// for testing purposes, console log
+	// console.log(studentInfo);
+	studentArray.push({"Name": studentName, "Phone Number": studentPhone, "City": studentCity});
 }
 
 function moreStudents() {
@@ -26,29 +35,42 @@ function moreStudents() {
 function addStudent() {
 	var next = prompt("Would you like to add another student?");
 		if (next === "yes") {
-			studentInfo();	
+			studentInfo();
 		}
+			console.log(studentArray);	
 }
-function addMentors() {
+function mentorsInfo() {
 	var mentorName = prompt("What is the mentors name?");
 	var mentorPhone = prompt("What is the mentors phone number?");
 	var mentorCity = prompt("where does the mentor live?");
-	mentorArray.push({"name": mentorName, "Phone Number": mentorPhone, "City": mentorCity});
-	console.log(mentorArray);
+	mentorArray.push({"Name": mentorName, "Phone Number": mentorPhone, "City": mentorCity});
 }
+
 function moreMentors() {
-	for (var i = 0; i < mentors; i++) {
-		addMentors();
+	for (var i = 1; i < mentors; i++) {
+		mentorsInfo();
 		}
 }
+function addMentor() {
+	var next2 = prompt("Would you like to add another mentor?");
+	if (next2 === "yes") {
+		mentorsInfo();
+	} 
+		console.log(mentorArray);
+}
+
 
 
 
 studentInfo();
 moreStudents();
 addStudent();
-addMentors();
+mentorsInfo();
 moreMentors();
+addMentor();
+
+
+
 // var numStudents = prompt("How many students will be learning JavaScript?");
 // Step 2: For each student, ask the user for their name, phone number, and city. Create an object for each person. Add each object to an array. BONUS: add validation.
 // var totalStudents = [];
