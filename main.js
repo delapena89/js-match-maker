@@ -23,7 +23,7 @@ function studentInfo() {
 	var studentCity = prompt("Where is the student from?");
 	// for testing purposes, console log
 	// console.log(studentInfo);
-	studentArray.push({"Name": studentName, "Phone Number": studentPhone, "City": studentCity});
+	studentArray.push({name: studentName, phoneNumber: studentPhone, city: studentCity});
 }
 
 function moreStudents() {
@@ -43,7 +43,7 @@ function mentorsInfo() {
 	var mentorName = prompt("What is the mentors name?");
 	var mentorPhone = prompt("What is the mentors phone number?");
 	var mentorCity = prompt("where does the mentor live?");
-	mentorArray.push({"Name": mentorName, "Phone Number": mentorPhone, "City": mentorCity});
+	mentorArray.push({"name": mentorName, "phoneNumber": mentorPhone, "city": mentorCity});
 }
 
 function moreMentors() {
@@ -62,14 +62,33 @@ function addMentor() {
 
 
 
+
+function iterate(array){
+	for(var key in array){
+		console.log(array[key]);
+  alert('Name : ' + (studentArray[key].name) + '\nPhone Number : ' + (studentArray[key].phoneNumber) + "\nCity : " + (studentArray[key].city));
+  alert('Name : ' + (mentorArray[key].name) + '\nPhone Number : ' + (mentorArray[key].phoneNumber) + "\nCity : " + (mentorArray[key].city));
+  // alert(array[0]);	
+	}
+  }
+
+
+
 studentInfo();
 moreStudents();
 addStudent();
 mentorsInfo();
 moreMentors();
 addMentor();
+iterate(studentArray);
+iterate(mentorArray);
 
 
+
+
+
+// alert('Name : ' + (studentArray[i].name) + '\nPhone Number : ' + (studentArray[i].phoneNumber) + "\nCity : " + (studentArray[i].city));
+// alert('Name : ' + (mentorArray[0].name) + '\nPhone Number : ' + (mentorArray[0].phoneNumber) + "\nCity : " + (mentorArray[0].city));
 
 // var numStudents = prompt("How many students will be learning JavaScript?");
 // Step 2: For each student, ask the user for their name, phone number, and city. Create an object for each person. Add each object to an array. BONUS: add validation.
